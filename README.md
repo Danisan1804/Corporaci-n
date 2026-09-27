@@ -224,13 +224,13 @@ INS LEL/
 
 7. Configurar el primer administrador mediante el procedimiento de instalación correspondiente. Después de utilizar `setup_admin.php`, debe protegerse o retirarse del servidor público.
 
-## Configuración para InfinityFree
+## Configuración para Servidor
 
-En InfinityFree, la configuración se realiza directamente en `admin/config.php` con los datos entregados por el hosting:
+La configuración se realiza directamente en `admin/config.php` con los datos entregados por el hosting:
 
 ```php
 return [
-    'host' => 'HOST_MYSQL_DE_INFINITYFREE',
+    'host' => 'HOST_MYSQL',
     'db' => 'NOMBRE_DE_BASE_DE_DATOS',
     'user' => 'USUARIO_MYSQL',
     'pass' => 'CONTRASENA_MYSQL',
@@ -238,7 +238,6 @@ return [
 ];
 ```
 
-No se deben subir contraseñas reales a GitHub. El archivo `config.php` debe permanecer fuera del control de versiones o reemplazarse por un archivo de ejemplo sin secretos.
 
 ## Seguridad aplicada
 
@@ -294,22 +293,9 @@ Para mantener el proyecto ordenado, utilizo estas convenciones:
 - No se guardan contraseñas, tokens ni datos de conexión dentro del repositorio.
 - Cada cambio funcional debe probarse en los tres flujos: público, administrador y participante.
 
-## Documentación que consulté
-
-Para organizar el proyecto y revisar algunos temas de seguridad consulté la documentación oficial de GitHub y PHP:
-
-- [Cómo escribir y organizar un README en GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-and-formatting-on-github)
-- [Buenas prácticas para repositorios](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
-- [Prevención de SQL injection en PHP](https://www.php.net/manual/en/security.database.sql-injection.php)
-- [Consultas preparadas con PDO](https://www.php.net/pdo.prepared-statements)
-
-También revisé algunos tutoriales en video sobre la estructura de un README y el uso de consultas preparadas. Los enlaces quedan aquí como apoyo para quien quiera entender o continuar el proyecto:
-
-- [Cómo crear un README para GitHub](https://www.youtube.com/watch?v=gZE5sseLfcQ)
-- [Cómo escribir un README desde cero](https://www.youtube.com/watch?v=aUbasIfag-E)
 
 ## Autor
 
 Este proyecto lo diseñé y desarrollé como una propuesta de solución digital para apoyar el trabajo de la Corporación LEL y facilitar el seguimiento de sus participantes, encuentros y resultados.
 
-En la versión final del repositorio agregaré aquí el nombre de los integrantes del equipo, la institución y el año de desarrollo.
+Daniel Sánchez, Corporación LEL, Agost-Sept 2026.
