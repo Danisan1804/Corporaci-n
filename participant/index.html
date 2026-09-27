@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LEL | Portal del participante</title>
+    <meta name="theme-color" content="#102a43" />
+    <link rel="stylesheet" href="participant.css" />
+  </head>
+  <body>
+    <div class="login-screen" id="login-screen">
+      <form class="login-card" id="login-form">
+        <p class="eyebrow">Corporación LEL</p>
+        <h1>Portal del participante</h1>
+        <p class="muted">Consulta tu módulo, registra evidencias y reporta tu asistencia.</p>
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" autocomplete="username" required />
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+        <p class="error" id="login-error"></p>
+        <button class="button primary" type="submit">Ingresar</button>
+      </form>
+    </div>
+
+    <main class="portal hidden" id="portal">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Ruta formativa LEL</p>
+          <h1>Hola, <span id="participant-name">participante</span></h1>
+          <p class="muted">Completa tu evidencia antes de registrar la asistencia del módulo.</p>
+        </div>
+        <button class="button secondary" id="logout-button" type="button">Cerrar sesión</button>
+      </header>
+
+      <section class="summary-grid">
+        <article class="summary-card"><span>Módulo actual</span><strong id="current-module">—</strong></article>
+        <article class="summary-card"><span>Estado</span><strong id="participant-status">—</strong></article>
+        <article class="summary-card"><span>Asistencia general</span><strong id="overall-attendance">0%</strong></article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card">
+          <div class="section-heading">
+            <div><p class="eyebrow">Entregable</p><h2>Registrar evidencia</h2></div>
+            <span class="badge" id="evidence-status">Pendiente</span>
+          </div>
+          <form id="evidence-form">
+            <label for="evidence-title">Nombre de la evidencia</label>
+            <input id="evidence-title" name="title" required placeholder="Ej. Mapa de actores del proyecto" />
+            <label for="evidence-description">Descripción</label>
+            <textarea id="evidence-description" name="description" rows="4" required></textarea>
+            <label for="evidence-link">Enlace opcional</label>
+            <input id="evidence-link" name="link" type="url" placeholder="https://..." />
+            <p class="error" id="evidence-error"></p>
+            <button class="button primary" type="submit">Guardar evidencia</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <div class="section-heading">
+            <div><p class="eyebrow">Asistencia</p><h2>Registrar asistencia</h2></div>
+            <span class="badge muted-badge">Requiere evidencia</span>
+          </div>
+          <p class="muted">Registra cada encuentro entre 30 minutos antes de su finalización y 30 minutos después. Debes adjuntar una foto como evidencia.</p>
+          <div id="meetings-list" class="meeting-list"><p class="muted">Cargando encuentros...</p></div>
+          <p class="error" id="attendance-error"></p>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="section-heading"><div><p class="eyebrow">Ruta formativa</p><h2>Estado de mis módulos</h2></div></div>
+        <div id="module-list" class="module-list"><p class="muted">Cargando módulos...</p></div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading"><div><p class="eyebrow">Seguimiento</p><h2>Mis evidencias</h2></div></div>
+        <div id="evidence-list" class="evidence-list"><p class="muted">Cargando...</p></div>
+      </section>
+    </main>
+
+    <script src="participant.js?v=attendance-window-1"></script>
+  </body>
+</html>
